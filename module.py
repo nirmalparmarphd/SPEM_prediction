@@ -9,7 +9,6 @@ import pandas as pd
 class sw_prediction:
     def __init__(self,input_data):
         input_data = pd.DataFrame([input_data])
-        print(input_data)
         model = load_model('sw_model.h5')
         scaler = joblib.load('sw_scaler.pkl')
         input_data_scaled = scaler.transform(input_data)
@@ -30,7 +29,6 @@ class sw_prediction:
 class spem_prediction:
     def __init__(self,input_data):
         input_data = pd.DataFrame([input_data])
-        print(input_data)
         model = load_model('spem_model.h5')
         scaler = joblib.load('spem_scaler.pkl')
         input_data_scaled = scaler.transform(input_data)
