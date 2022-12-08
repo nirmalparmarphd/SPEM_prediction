@@ -18,8 +18,7 @@ class sw_prediction:
         line = '-'*70
         result.columns = ['Day','Max_T[C]','Min_T[C]', 'RH(%)', 'WS(mps)','Density(Be)','Eveporatoin Prediction (mm)']
         print(line)
-        info = ''' Sea water eveporation prediction by ANN (Artifical Neural Network)
-        as per weather data collected at the Salt Farm, Bhavnagar, Gujarat.
+        info = ''' Sea water eveporation prediction by ANN (Artifical Neural Network) as per the weather data collected at the Salt Farm, Bhavnagar, Gujarat.
         '''
         print(info)
         print(line)
@@ -38,7 +37,7 @@ class spem_prediction:
         line = '-'*70
         result.columns = ['Day','Max_T[C]','Min_T[C]', 'RH(%)', 'WS(mps)','Density(Be)','SPEM - Eveporatoin Prediction (mm)']
         print(line)
-        info = ''' Sea water eveporation prediction with intigration of SPEM (Salt Production Enhancement Method) by ANN (Artifical Neural Network) as per weather data collected at the Salt Farm, Bhavnagar, Gujarat.
+        info = ''' Sea water eveporation prediction with intigration of SPEM (Salt Production Enhancement Method) by ANN (Artifical Neural Network) as per the weather data collected at the Salt Farm, Bhavnagar, Gujarat.
         '''
         print(info)
         print(line)

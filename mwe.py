@@ -4,8 +4,8 @@ from module import *
 
 data = [3.0,37.7,21.9,37.0,3.8,5.7]
 
-# Sea water eveporation prediction as per weather data to prodduce salt
+# Sea water eveporation prediction as per weather data without SPEM
 prediction = sw_prediction(data)
 
-# Sea water eveporation prediction with SPEM
+# Sea water eveporation prediction as per weather data with SPEM
 prediction = spem_prediction(data)
