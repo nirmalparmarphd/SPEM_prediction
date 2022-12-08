@@ -16,8 +16,8 @@ class sw_prediction:
         prediction = model.predict(input_data_scaled)
         prediction_df = pd.DataFrame(prediction)
         result = pd.concat([input_data,prediction_df], axis =1, ignore_index=True)
-        line = '-'*60
-        result.columns = ['Date April','Max_T','Min_T', 'RH(%)', 'WS(mps)','Den(Be)','Eveporatoin Prediction (mm)']
+        line = '-'*70
+        result.columns = ['Day','Max_T[C]','Min_T[C]', 'RH(%)', 'WS(mps)','Density(Be)','Eveporatoin Prediction (mm)']
         print(line)
         info = ''' Sea water eveporation prediction by ANN (Artifical Neural Network)
         as per weather data collected at the Salt Farm, Bhavnagar, Gujarat.
@@ -26,3 +26,25 @@ class sw_prediction:
         print(line)
         print(result)
         print(line)
+        
+class spem_prediction:
+    def __init__(self,input_data):
+        input_data = pd.DataFrame([input_data])
+        print(input_data)
+        model = load_model('spem_model.h5')
+        scaler = joblib.load('spem_scaler.pkl')
+        input_data_scaled = scaler.transform(input_data)
+        prediction = model.predict(input_data_scaled)
+        prediction_df = pd.DataFrame(prediction)
+        result = pd.concat([input_data,prediction_df], axis =1, ignore_index=True)
+        line = '-'*70
+        result.columns = ['Day','Max_T[C]','Min_T[C]', 'RH(%)', 'WS(mps)','Density(Be)','SPEM - Eveporatoin Prediction (mm)']
+        print(line)
+        info = ''' Sea water eveporation prediction with intigration of SPEM (Salt Production Enhancement Method) by ANN (Artifical Neural Network) as per weather data collected at the Salt Farm, Bhavnagar, Gujarat.
+        '''
+        print(info)
+        print(line)
+        print(result)
+        print(line)
+        
+        
